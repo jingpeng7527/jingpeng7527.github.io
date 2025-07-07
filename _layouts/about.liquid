@@ -64,14 +64,30 @@ layout: default
       {% include selected_papers.liquid %}
     {% endif %}
 
+<div style="display: flex; margin-top: 2em;">
+  <!-- Left column: interests + social -->
+  <div style="flex: 3; display: flex; flex-direction: column; padding-right: 20px;">
+  <!-- Personal interests -->
+    <div style="margin-top: 1em;">
+      <p style="font-style: italic;">
+      Outside of work, you’ll probably find me watching a good movie 🎬, thrifting 🧥, sipping coffee ☕, or visiting museums 🖼️.
+      </p>
+    </div>
+
     <!-- Social -->
     {% if page.social %}
-      <div class="social">
-        <div class="contact-icons">{% include social.liquid %}</div>
-
-        <div class="contact-note">{{ site.contact_note }}</div>
-      </div>
+    <div class="social">
+      <div class="contact-icons">{% include social.liquid %}</div>
+      <div class="contact-note">{{ site.contact_note }}</div>
+    </div>
     {% endif %}
+  </div>
+    
+     <!-- Visitor Map -->
+      <div style="flex: 1;">  
+        <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=sLZLQqtSs-Z7JR6u_0k58cggFUy7X2TvCNATpEOW6No"></script>
+      </div>
+</div>
 
     {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
       {% include newsletter.liquid center=true %}
