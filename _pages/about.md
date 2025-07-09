@@ -9,7 +9,7 @@ profile:
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>3205 Bioengineering</p>
-    <p>University of California, Santa Barbara</p>
+    <p>UC, Santa Barbara</p>
     <p>Santa Barbara, CA, 93106</p>
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
