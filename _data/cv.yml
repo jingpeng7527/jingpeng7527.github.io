@@ -1,45 +1,45 @@
-- title: Education
-  type: time_table
-  contents:
-    - title: M.S. in Computer Science
-      institution: University of California, Santa Barbara
-      year: 2022 - 2025
-      description:
-        - Advised by Prof. Michael Beyeler, Bionic Vision Lab.
-        - Research focus on visual neuroscience and embodied AI.
-    - title: B.Eng. in Software Engineering
-      institution: Northeastern University, China
-      year: 2018 - 2022
+# - title: Education
+#   type: time_table
+#   contents:
+#     - title: M.S. in Computer Science
+#       institution: University of California, Santa Barbara
+#       year: 2022 - 2025
+#       description:
+#         - Advised by Prof. Michael Beyeler, Bionic Vision Lab.
+#         - Research focus on visual neuroscience and embodied AI.
+#     - title: B.Eng. in Software Engineering
+#       institution: Northeastern University, China
+#       year: 2018 - 2022
 
-- title: Experience
-  type: time_table
-  contents:
-    - title: Graduate Research Assistant
-      institution: Bionic Vision Lab, UC Santa Barbara
-      year: 2022 - 2025
-      description:
-        - Developed the core training infrastructure for the Mouse vs AI&#58; Robust Visual Foraging Competition @ NeurIPS 2025.
-        - Integrated ML-Agents with Unity-based environments to create cross-platform embodied RL tasks.
-        - Built competition pipeline enabling participants to train and evaluate agents under consistent, reproducible conditions.
+# - title: Experience
+#   type: time_table
+#   contents:
+#     - title: Graduate Research Assistant
+#       institution: Bionic Vision Lab, UC Santa Barbara
+#       year: 2022 - 2025
+#       description:
+#         - Developed the core training infrastructure for the Mouse vs AI&#58; Robust Visual Foraging Competition @ NeurIPS 2025.
+#         - Integrated ML-Agents with Unity-based environments to create cross-platform embodied RL tasks.
+#         - Built competition pipeline enabling participants to train and evaluate agents under consistent, reproducible conditions.
 
-- title: Projects
-  type: time_table
-  contents:
-    - title: <a href="https://robustforaging.github.io/">Mouse vs AI&#58; Robust Visual Foraging Competition @ NeurIPS 2025</a>
-      year: 2024 - 2025
-      description:
-        - Benchmark competition bridging biological and artificial vision through embodied AI.
-        - Successfully held at NeurIPS 2025 in San Diego; inaugural winners&#58; Team HCMUS_TheFangs.
+# - title: Projects
+#   type: time_table
+#   contents:
+#     - title: <a href="https://robustforaging.github.io/">Mouse vs AI&#58; Robust Visual Foraging Competition @ NeurIPS 2025</a>
+#       year: 2024 - 2025
+#       description:
+#         - Benchmark competition bridging biological and artificial vision through embodied AI.
+#         - Successfully held at NeurIPS 2025 in San Diego; inaugural winners&#58; Team HCMUS_TheFangs.
 
-- title: Skills
-  type: nested_list
-  contents:
-    - title: Engineering
-      items:
-        - Backend development, DevOps, ML pipelines
-        - Unity / ML-Agents, reinforcement learning environments
-        - Python, C#, Docker, CI/CD
-    - title: Research
-      items:
-        - Visual neuroscience, computational modeling
-        - Embodied AI, robust computer vision
+# - title: Skills
+#   type: nested_list
+#   contents:
+#     - title: Engineering
+#       items:
+#         - Backend development, DevOps, ML pipelines
+#         - Unity / ML-Agents, reinforcement learning environments
+#         - Python, C#, Docker, CI/CD
+#     - title: Research
+#       items:
+#         - Visual neuroscience, computational modeling
+#         - Embodied AI, robust computer vision
