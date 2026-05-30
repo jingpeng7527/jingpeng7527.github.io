@@ -38,16 +38,17 @@ ninja.data = [{
             window.open("https://medium.com/@al-folio/displaying-external-posts-on-your-al-folio-blog-b60a1d241a0a?source=rss-17feae71c3c4------2", "_blank");
           
         },
-      },{id: "books-the-godfather",
-          title: 'The Godfather',
-          description: "",
-          section: "Books",handler: () => {
-              window.location.href = "/books/the_godfather/";
-            },},{id: "news-i-m-starting-my-master-journey-at-uc-santa-barbara",
+      },{id: "news-i-m-starting-my-master-journey-at-uc-santa-barbara",
           title: 'I’m starting my master journey at UC, Santa Barbara!',
           description: "",
-          section: "News",},{id: "news-our-abstract-got-accecpted-by-cosyne-2025",
-          title: 'Our abstract got accecpted by COSYNE 2025 🧠',
+          section: "News",},{id: "news-our-abstract-got-accepted-by-cosyne-2025",
+          title: 'Our abstract got accepted by COSYNE 2025 🧠',
+          description: "",
+          section: "News",},{id: "news-i-graduated-from-uc-santa-barbara-with-an-m-s-in-computer-science",
+          title: 'I graduated from UC Santa Barbara with an M.S. in Computer Science! 🎓...',
+          description: "",
+          section: "News",},{id: "news-our-mouse-vs-ai-robust-visual-foraging-competition-neurips-2025-was-successfully-held-in-san-diego-congratulations-to-all-the-winners",
+          title: 'Our Mouse vs AI: Robust Visual Foraging Competition @ NeurIPS 2025 was successfully...',
           description: "",
           section: "News",},{
         id: 'social-email',
