@@ -6,4 +6,4 @@ related_posts: false
 ---
 
 
-Our abstract got accecpted by [COSYNE 2025](https://www.cosyne.org/) 🧠
+Our abstract got accepted by [COSYNE 2025](https://www.cosyne.org/) 🧠
