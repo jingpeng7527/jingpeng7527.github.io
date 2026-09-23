@@ -1,0 +1,98 @@
+---
+import { profile, links } from "../data/site";
+---
+
+<section class="hero">
+  <div class="text">
+    <p class="eyebrow">{profile.role}</p>
+    <h1>Hi, I'm {profile.name.split(" ")[0]}.</h1>
+    <p class="tagline">{profile.tagline}</p>
+    <p class="summary">{profile.summary}</p>
+    <div class="actions">
+      {profile.resume && (
+        <a class="btn primary" href={profile.resume} target="_blank">Résumé</a>
+      )}
+      {links.map((l) => (
+        <a class="btn" href={l.href} target={l.href.startsWith("http") ? "_blank" : undefined} rel="noopener">
+          {l.label}
+        </a>
+      ))}
+    </div>
+  </div>
+  <img class="photo" src={profile.photo} alt={profile.name} width="180" height="180" />
+</section>
+
+<style>
+  .hero {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 72px 0 48px;
+  }
+  .text {
+    flex: 1;
+  }
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--accent);
+    margin: 0 0 8px;
+  }
+  h1 {
+    font-size: clamp(32px, 6vw, 44px);
+    font-weight: 700;
+  }
+  .tagline {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 10px 0 0;
+  }
+  .summary {
+    color: var(--muted);
+    margin: 14px 0 0;
+    max-width: 52ch;
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 24px;
+  }
+  .btn {
+    padding: 8px 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .btn:hover {
+    border-color: var(--accent);
+    text-decoration: none;
+  }
+  .btn.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+  .photo {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+  }
+  @media (max-width: 640px) {
+    .hero {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      padding-top: 40px;
+      gap: 24px;
+    }
+    .photo {
+      width: 120px;
+      height: 120px;
+    }
+  }
+</style>

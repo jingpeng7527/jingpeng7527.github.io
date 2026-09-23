@@ -1,0 +1,57 @@
+---
+import { profile } from "../data/site";
+
+const items = [
+  { label: "Experience", href: "#experience" },
+  { label: "Projects", href: "#projects" },
+  { label: "Skills", href: "#skills" },
+  { label: "Education", href: "#education" },
+];
+---
+
+<header class="nav">
+  <div class="container inner">
+    <a class="brand" href="/">{profile.name}</a>
+    <nav>
+      {items.map((i) => <a href={i.href}>{i.label}</a>)}
+    </nav>
+  </div>
+</header>
+
+<style>
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: color-mix(in srgb, var(--bg) 85%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+  .inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+  }
+  .brand {
+    font-weight: 600;
+    color: var(--text);
+  }
+  nav {
+    display: flex;
+    gap: 20px;
+    font-size: 14px;
+  }
+  nav a {
+    color: var(--muted);
+  }
+  nav a:hover {
+    color: var(--text);
+    text-decoration: none;
+  }
+  @media (max-width: 600px) {
+    nav {
+      display: none;
+    }
+  }
+</style>

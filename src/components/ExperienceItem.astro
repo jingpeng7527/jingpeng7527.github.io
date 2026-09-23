@@ -1,0 +1,55 @@
+---
+import type { Experience } from "../data/site";
+
+interface Props {
+  item: Experience;
+}
+const { item } = Astro.props;
+---
+
+<article>
+  <div class="head">
+    <h3>
+      {item.title} · {item.href ? <a href={item.href} target="_blank" rel="noopener">{item.org}</a> : item.org}
+    </h3>
+    <span class="period">{item.period}</span>
+  </div>
+  <ul class="points">
+    {item.points.map((p) => <li>{p}</li>)}
+  </ul>
+  {item.stack && (
+    <ul class="tags">
+      {item.stack.map((s) => <li>{s}</li>)}
+    </ul>
+  )}
+</article>
+
+<style>
+  article + article {
+    margin-top: 32px;
+  }
+  .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+  }
+  .period {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .points {
+    margin: 10px 0 14px;
+    padding-left: 18px;
+    color: var(--muted);
+  }
+  .points li + li {
+    margin-top: 4px;
+  }
+</style>
