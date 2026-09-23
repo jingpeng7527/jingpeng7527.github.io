@@ -4,9 +4,9 @@
 export const profile = {
   name: "Jing Peng",
   role: "Software Engineer",
-  tagline: "Backend · Distributed Systems · ML Infrastructure",
+  tagline: "Backend · Distributed Systems · DevOps",
   summary:
-    "I build the systems that make research and products run: training infrastructure, data pipelines, and reproducible environments. M.S. in Computer Science from UC Santa Barbara.",
+    "I build backend services and the tooling around them: APIs, event-driven systems, and CI/CD pipelines. M.S. in Computer Science from UC Santa Barbara.",
   location: "Santa Barbara, CA",
   photo: "/img/Jing_Peng.jpg",
   // TODO: drop a PDF into public/ and set e.g. "/resume.pdf"
