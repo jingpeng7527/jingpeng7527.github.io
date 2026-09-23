@@ -1,4 +1,2 @@
 User-agent: *
-Disallow:
-
-Sitemap: https://jingpeng7527.github.io/sitemap.xml
+Allow: /
