@@ -2,7 +2,7 @@
 // components only handle layout.
 
 export const profile = {
-  name: "Iris Jing Peng",
+  name: "Jing Peng",
   role: "Software Engineer",
   // TODO: tune the headline to the roles you're targeting
   tagline: "Backend · ML Infrastructure · DevOps",
