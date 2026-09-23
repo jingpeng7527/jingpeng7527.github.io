@@ -2,10 +2,11 @@
 import { profile } from "../data/site";
 
 const items = [
-  { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#projects" },
-  { label: "Skills", href: "#skills" },
-  { label: "Education", href: "#education" },
+  { label: "Experience", href: "/#experience" },
+  { label: "Projects", href: "/#projects" },
+  { label: "Skills", href: "/#skills" },
+  { label: "Education", href: "/#education" },
+  { label: "Blog", href: "/blog/", keep: true },
 ];
 ---
 
@@ -13,7 +14,7 @@ const items = [
   <div class="container inner">
     <a class="brand" href="/">{profile.name}</a>
     <nav>
-      {items.map((i) => <a href={i.href}>{i.label}</a>)}
+      {items.map((i) => <a href={i.href} class:list={{ section: !i.keep }}>{i.label}</a>)}
     </nav>
   </div>
 </header>
@@ -50,7 +51,7 @@ const items = [
     text-decoration: none;
   }
   @media (max-width: 600px) {
-    nav {
+    nav .section {
       display: none;
     }
   }

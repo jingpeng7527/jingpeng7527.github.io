@@ -1,0 +1,107 @@
+---
+import Base from "../../layouts/Base.astro";
+import Nav from "../../components/Nav.astro";
+import Footer from "../../components/Footer.astro";
+import { getPosts, formatDate } from "../../lib/posts";
+import { profile } from "../../data/site";
+
+const posts = await getPosts();
+---
+
+<Base title={`Blog · ${profile.name}`} description={`Technical writing by ${profile.name}.`}>
+  <Nav />
+  <main class="container">
+    <h1>Blog</h1>
+    <p class="lede">Notes on backend systems, infrastructure, and things I've built.</p>
+
+    {posts.length === 0 ? (
+      <p class="empty">No posts yet — check back soon.</p>
+    ) : (
+      <ul class="posts">
+        {posts.map((post) => (
+          <li>
+            <a href={`/blog/${post.id}/`}>
+              <span class="title">
+                {post.data.title}
+                {post.data.draft && <span class="draft">draft</span>}
+              </span>
+              {post.data.description && <span class="desc">{post.data.description}</span>}
+            </a>
+            <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
+          </li>
+        ))}
+      </ul>
+    )}
+  </main>
+  <Footer />
+</Base>
+
+<style>
+  main {
+    padding: 56px 16px 64px;
+    min-height: 60vh;
+  }
+  h1 {
+    font-size: 36px;
+  }
+  .lede,
+  .empty {
+    color: var(--muted);
+    margin: 8px 0 40px;
+  }
+  .posts {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .posts li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding: 18px 0;
+    border-top: 1px solid var(--border);
+  }
+  .posts a {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    color: var(--text);
+  }
+  .posts a:hover {
+    text-decoration: none;
+  }
+  .posts a:hover .title {
+    color: var(--accent);
+  }
+  .title {
+    font-weight: 600;
+    font-size: 17px;
+  }
+  .desc {
+    color: var(--muted);
+    font-size: 15px;
+  }
+  time {
+    flex-shrink: 0;
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .draft {
+    margin-left: 8px;
+    font-family: var(--mono);
+    font-size: 11px;
+    padding: 1px 6px;
+    border-radius: 4px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    vertical-align: middle;
+  }
+  @media (max-width: 600px) {
+    .posts li {
+      flex-direction: column-reverse;
+      gap: 4px;
+    }
+  }
+</style>

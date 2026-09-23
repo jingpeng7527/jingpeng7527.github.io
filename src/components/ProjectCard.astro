@@ -8,8 +8,12 @@ const { project } = Astro.props;
 ---
 
 <article class="card">
-  <h3>{project.name}</h3>
-  <p>{project.description}</p>
+  <div class="head">
+    <h3>{project.name}</h3>
+    {project.period && <span class="period">{project.period}</span>}
+  </div>
+  {project.context && <p class="context">{project.context}</p>}
+  {project.description && <p>{project.description}</p>}
   <ul class="tags">
     {project.stack.map((s) => <li>{s}</li>)}
   </ul>
@@ -36,9 +40,22 @@ const { project } = Astro.props;
   .card:hover {
     border-color: var(--accent);
   }
+  .head {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
   h3 {
     font-size: 16px;
     font-weight: 600;
+  }
+  .period {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .context {
+    font-size: 14px;
   }
   p {
     margin: 0;
@@ -47,6 +64,7 @@ const { project } = Astro.props;
     flex: 1;
   }
   .links {
+    margin-top: auto;
     display: flex;
     gap: 16px;
     font-size: 14px;

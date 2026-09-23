@@ -4,8 +4,7 @@
 export const profile = {
   name: "Jing Peng",
   role: "Software Engineer",
-  // TODO: tune the headline to the roles you're targeting
-  tagline: "Backend · ML Infrastructure · DevOps",
+  tagline: "Backend · Distributed Systems · ML Infrastructure",
   summary:
     "I build the systems that make research and products run: training infrastructure, data pipelines, and reproducible environments. M.S. in Computer Science from UC Santa Barbara.",
   location: "Santa Barbara, CA",
@@ -20,64 +19,105 @@ export const links = [
   { label: "Email", href: "mailto:jingpeng7527@gmail.com" },
 ];
 
+export type Link = { label: string; href: string };
+
 export type Experience = {
   title: string;
   org: string;
   href?: string;
   period: string;
-  points: string[];
+  // the project / course this role centered on
+  focus?: string;
+  links?: Link[];
+  // TODO: bullet points intentionally left empty for now
+  points?: string[];
   stack?: string[];
 };
 
 export const experience: Experience[] = [
   {
-    title: "Graduate Research Assistant",
+    title: "Research Software Developer",
     org: "Bionic Vision Lab, UC Santa Barbara",
-    href: "https://bionicvisionlab.org/",
-    period: "2022 – 2025",
-    points: [
-      "Built the core training infrastructure for the Mouse vs AI: Robust Visual Foraging Competition @ NeurIPS 2025.",
-      "Integrated Unity ML-Agents with custom environments to create embodied reinforcement learning tasks.",
-      "Packaged environments into standalone, cross-platform executables so participants could train and evaluate agents under reproducible conditions.",
+    href: "https://bionicvisionlab.org/research/mouse-visual-navigation/",
+    period: "Jul 2024 – Dec 2025",
+    focus: "Robust Visual Foraging Challenge @ NeurIPS 2025",
+    links: [
+      { label: "Website", href: "https://robustforaging.github.io/" },
+      { label: "Code", href: "https://github.com/jingpeng7527/mouse-vs-ai-foraging-unity" },
+      { label: "Paper", href: "https://arxiv.org/abs/2509.14446" },
     ],
-    stack: ["Python", "C#", "Unity", "ML-Agents", "Docker"],
+    stack: ["C#", "Unity", "ML-Agents", "Python", "PyTorch", "ONNX"],
+  },
+  {
+    title: "Teaching Assistant",
+    org: "UC Santa Barbara",
+    period: "Apr 2023 – Sep 2024",
+    focus: "CS 156: Advanced Applications Programming",
+    links: [
+      { label: "Course", href: "https://ucsb-cs156.github.io/m23/syllabus" },
+      { label: "GitHub", href: "https://github.com/ucsb-cs156-f23" },
+    ],
+    stack: ["Spring Boot", "React", "PostgreSQL", "GitHub Actions", "JaCoCo"],
+  },
+  {
+    title: "Software Development Engineer Intern",
+    org: "Neusoft",
+    period: "May 2021 – Aug 2021",
+    focus: "Neusoft Profit Management System",
+    stack: ["Java", "Spring Boot", "Spring Cloud Gateway", "Kafka", "Redis", "MySQL"],
   },
 ];
 
 export type Project = {
   name: string;
-  description: string;
+  period?: string;
+  context?: string;
+  // TODO: descriptions intentionally left empty for now
+  description?: string;
   stack: string[];
-  links: { label: string; href: string }[];
+  links: Link[];
 };
 
 export const projects: Project[] = [
   {
-    name: "Mouse vs AI: Robust Visual Foraging",
-    description:
-      "NeurIPS 2025 benchmark competition bridging biological and artificial vision. I built the Unity + ML-Agents training environments and the pipeline participants used to train and submit agents.",
-    stack: ["Unity", "ML-Agents", "Python", "C#"],
-    links: [{ label: "Website", href: "https://robustforaging.github.io/" }],
+    name: "Governed Computer-Use Automation",
+    period: "Sep 2026 – Present",
+    stack: ["Python", "Playwright", "Pydantic", "FastAPI", "SQLite"],
+    links: [{ label: "GitHub", href: "https://github.com/jingpeng7527/computer_use_automation" }],
   },
-  // TODO: add 2–5 more projects (name, one-line impact, stack, repo/demo links)
+  {
+    name: "Tab Agent",
+    period: "Mar 2026 – Present",
+    stack: ["JavaScript", "Chrome Extension (MV3)", "Groq LLM API"],
+    links: [{ label: "GitHub", href: "https://github.com/jingpeng7527/chrome_manager" }],
+  },
 ];
 
-// TODO: placeholder list — keep only what you would be comfortable being interviewed on
 export const skills: { group: string; items: string[] }[] = [
-  { group: "Languages", items: ["Python", "C#", "TypeScript", "SQL"] },
-  { group: "Backend & Infra", items: ["Docker", "CI/CD", "Linux", "REST APIs"] },
-  { group: "ML", items: ["PyTorch", "Reinforcement Learning", "Unity ML-Agents"] },
+  { group: "Languages", items: ["Java", "Python", "SQL (PostgreSQL / MySQL)", "TypeScript / JavaScript", "C / C++"] },
+  {
+    group: "Backend & Web",
+    items: ["Spring Boot / Cloud", "Hibernate / JPA", "FastAPI", "React", "Node.js", "Vue.js", "Android (Kotlin)", "JUnit", "JaCoCo", "Pytest"],
+  },
+  {
+    group: "Infra & Observability",
+    items: ["AWS", "Docker", "Redis", "Kafka", "RabbitMQ", "Nacos", "Prometheus", "Grafana", "Datadog", "Splunk"],
+  },
+  {
+    group: "Automation & Tools",
+    items: ["Playwright", "Pydantic", "PyTorch", "Unity ML-Agents", "NumPy", "Git", "Maven", "Postman"],
+  },
 ];
 
 export const education = [
   {
     degree: "M.S. in Computer Science",
     school: "University of California, Santa Barbara",
-    period: "2022 – 2025",
+    period: "Sep 2022 – Sep 2025",
   },
   {
-    degree: "B.Eng. in Software Engineering",
-    school: "Northeastern University, China",
-    period: "2018 – 2022",
+    degree: "B.E. in Software Engineering",
+    school: "Northeastern University, Shenyang, China",
+    period: "Sep 2018 – Jun 2022",
   },
 ];

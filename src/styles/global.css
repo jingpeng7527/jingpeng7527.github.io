@@ -82,3 +82,12 @@ h3 {
   background: var(--accent-soft);
   color: var(--accent);
 }
+
+/* Code blocks: Shiki emits both themes; swap to the dark one with the OS setting */
+@media (prefers-color-scheme: dark) {
+  .astro-code,
+  .astro-code span {
+    color: var(--shiki-dark) !important;
+    background-color: var(--shiki-dark-bg) !important;
+  }
+}
