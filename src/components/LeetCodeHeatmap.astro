@@ -1,0 +1,78 @@
+---
+// One square per day, Sunday-first columns. Colours come from the site's own variables so it follows light/dark.
+interface Props {
+  daily: Record<string, number>;
+  end: string; // YYYY-MM-DD, the last day shown
+  weeks?: number;
+  cell?: number;
+  labels?: boolean;
+}
+const { daily, end, weeks = 53, cell = 11, labels = true } = Astro.props;
+
+const DAY = 86400000;
+const endDate = new Date(`${end}T00:00:00Z`);
+const start = new Date(endDate.getTime() - (endDate.getUTCDay() + (weeks - 1) * 7) * DAY);
+const gap = 3;
+const step = cell + gap;
+const left = labels ? 30 : 0;
+const top = labels ? 18 : 0;
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+const days: { key: string; x: number; y: number; n: number; month: number; dom: number; dow: number; w: number }[] = [];
+for (let t = start.getTime(), i = 0; t <= endDate.getTime(); t += DAY, i++) {
+  const d = new Date(t);
+  const key = d.toISOString().slice(0, 10);
+  const w = Math.floor(i / 7);
+  const dow = d.getUTCDay();
+  days.push({ key, w, dow, x: left + w * step, y: top + dow * step, n: daily[key] ?? 0, month: d.getUTCMonth(), dom: d.getUTCDate() });
+}
+const counts = days.map((d) => d.n).filter((n) => n > 0).sort((a, b) => a - b);
+const q = (f: number) => counts[Math.floor(f * (counts.length - 1))] ?? 1;
+const cuts = [q(0.4), q(0.7), q(0.92)];
+const level = (n: number) => (n === 0 ? 0 : n <= cuts[0] ? 1 : n <= cuts[1] ? 2 : n <= cuts[2] ? 3 : 4);
+const fills = [
+  "var(--border)",
+  "color-mix(in srgb, var(--accent) 30%, var(--bg))",
+  "color-mix(in srgb, var(--accent) 55%, var(--bg))",
+  "color-mix(in srgb, var(--accent) 78%, var(--bg))",
+  "var(--accent)",
+];
+const monthLabels: { x: number; text: string }[] = [];
+let last = -1;
+for (const d of days) {
+  if (d.dow === 0 && d.month !== last && d.dom <= 7) {
+    last = d.month;
+    monthLabels.push({ x: d.x, text: MONTHS[d.month] });
+  }
+}
+const width = left + weeks * step;
+const height = top + 7 * step;
+---
+
+<div class="wrap">
+  <svg viewBox={`0 0 ${width} ${height}`} role="img" aria-label="Accepted submissions per day" style={`min-width:${Math.min(width, 640)}px;max-width:${Math.round(width * 1.6)}px`}>
+    {labels && monthLabels.map((m) => <text x={m.x} y="10">{m.text}</text>)}
+    {labels && ["Mon", "Wed", "Fri"].map((t, i) => <text x="0" y={top + (i * 2 + 1) * step + cell - 1}>{t}</text>)}
+    {days.map((d) => (
+      <rect x={d.x} y={d.y} width={cell} height={cell} rx="2" fill={fills[level(d.n)]}>
+        <title>{d.key}: {d.n} accepted</title>
+      </rect>
+    ))}
+  </svg>
+</div>
+
+<style>
+  .wrap {
+    overflow-x: auto;
+  }
+  svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  text {
+    fill: var(--muted);
+    font-family: var(--font);
+    font-size: 10px;
+  }
+</style>

@@ -1,0 +1,54 @@
+---
+import { getCollection, render } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import Nav from "../../components/Nav.astro";
+import Footer from "../../components/Footer.astro";
+import Prose from "../../components/Prose.astro";
+import { profile } from "../../data/site";
+
+export async function getStaticPaths() {
+  const notes = await getCollection("leetcode");
+  return notes.map((note) => ({ params: { slug: note.id }, props: { note } }));
+}
+
+const { note } = Astro.props;
+const { Content } = await render(note);
+const { title, topic, difficulty, problemUrl } = note.data;
+---
+
+<Base title={`${title} · ${profile.name}`} description={`LeetCode ${topic} solution notes: ${title}`}>
+  <Nav />
+  <main class="container">
+    <a class="back" href="/leetcode/">← All notes</a>
+    <article>
+      <header>
+        <h1>{title}</h1>
+        <ul class="tags">
+          <li>{topic}</li>
+          {difficulty && <li>{difficulty}</li>}
+          <li><a href={problemUrl} target="_blank" rel="noopener">Open on LeetCode ↗</a></li>
+        </ul>
+      </header>
+      <Prose><Content /></Prose>
+    </article>
+  </main>
+  <Footer />
+</Base>
+
+<style>
+  main {
+    max-width: 720px;
+    padding: 40px 16px 64px;
+  }
+  .back {
+    font-size: 14px;
+    color: var(--muted);
+  }
+  header {
+    margin: 24px 0 32px;
+  }
+  h1 {
+    font-size: clamp(26px, 5vw, 34px);
+    margin-bottom: 14px;
+  }
+</style>

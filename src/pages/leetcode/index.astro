@@ -1,0 +1,167 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import Nav from "../../components/Nav.astro";
+import Footer from "../../components/Footer.astro";
+import LeetCodeHeatmap from "../../components/LeetCodeHeatmap.astro";
+import stats from "../../data/leetcode.json";
+import { profile } from "../../data/site";
+
+const notes = await getCollection("leetcode");
+const byTopic = new Map<string, typeof notes>();
+for (const n of notes) byTopic.set(n.data.topic, [...(byTopic.get(n.data.topic) ?? []), n]);
+const topics = [...byTopic.entries()].sort(([a], [b]) => a.localeCompare(b));
+for (const [, list] of topics) list.sort((a, b) => a.data.number - b.data.number);
+const maxTopic = Math.max(...stats.topics.map((t) => t.count), 1);
+---
+
+<Base title={`LeetCode · ${profile.name}`} description={`LeetCode activity and solution notes by ${profile.name}.`}>
+  <Nav />
+  <main class="container">
+    <h1>LeetCode</h1>
+    <p class="lede">Activity and solution notes. Updated {stats.updated}.</p>
+
+    <div class="kpis">
+      <div><b>{stats.acceptedLastYear}</b><span>Accepted, last year</span></div>
+      <div><b>{stats.activeDays}</b><span>Active days, last year</span></div>
+      <div><b>{notes.length}</b><span>Notes</span></div>
+    </div>
+
+    <h2>Activity</h2>
+    <LeetCodeHeatmap daily={stats.daily} end={stats.updated} />
+
+    <h2>Topics</h2>
+    <div class="topics">
+      {stats.topics.map((t) => (
+        <>
+          <span>{t.name}</span>
+          <span class="bar"><i style={`width:${(t.count / maxTopic) * 100}%`}></i></span>
+          <span class="n">{t.count}</span>
+        </>
+      ))}
+    </div>
+
+    <h2>Notes</h2>
+    {topics.map(([topic, list]) => (
+      <section>
+        <h3>{topic} <span>{list.length}</span></h3>
+        <ul class="list">
+          {list.map((n) => (
+            <li>
+              <a href={`/leetcode/${n.id}/`}>
+                <span class="t">{n.data.title}</span>
+                {n.data.difficulty && <span class="diff">{n.data.difficulty}</span>}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+  </main>
+  <Footer />
+</Base>
+
+<style>
+  main {
+    padding: 56px 16px 64px;
+    min-height: 60vh;
+  }
+  h1 {
+    font-size: 36px;
+  }
+  h2 {
+    font-size: 13px;
+    font-family: var(--mono);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin: 48px 0 16px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+  }
+  .lede {
+    color: var(--muted);
+    margin: 8px 0 32px;
+  }
+  .kpis {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+  }
+  .kpis div {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+  }
+  .kpis b {
+    display: block;
+    font-size: 28px;
+    line-height: 1.2;
+    font-variant-numeric: tabular-nums;
+  }
+  .kpis span {
+    color: var(--muted);
+    font-size: 13px;
+  }
+  .topics {
+    display: grid;
+    grid-template-columns: minmax(110px, 190px) 1fr 44px;
+    gap: 8px 12px;
+    align-items: center;
+    font-size: 14px;
+  }
+  .bar {
+    display: block;
+    height: 10px;
+  }
+  .bar i {
+    display: block;
+    height: 100%;
+    background: var(--accent);
+    border-radius: 0 5px 5px 0;
+  }
+  .n {
+    text-align: right;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+  section h3 {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+    margin: 28px 0 8px;
+  }
+  section h3 span {
+    color: var(--accent);
+  }
+  .list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .list li {
+    border-top: 1px solid var(--border);
+  }
+  .list a {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 10px 0;
+    color: var(--text);
+  }
+  .list a:hover {
+    text-decoration: none;
+  }
+  .list a:hover .t {
+    color: var(--accent);
+  }
+  .diff {
+    flex-shrink: 0;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+  }
+</style>

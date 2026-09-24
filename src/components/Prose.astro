@@ -1,0 +1,92 @@
+---
+// Article typography, same rules as the blog post page.
+---
+
+<div class="prose"><slot /></div>
+
+<style>
+  .prose {
+    font-size: 17px;
+    line-height: 1.75;
+  }
+  .prose :global(h2) {
+    font-size: 24px;
+    margin: 40px 0 12px;
+  }
+  .prose :global(h3) {
+    font-size: 19px;
+    margin: 32px 0 8px;
+  }
+  .prose :global(h4) {
+    font-size: 17px;
+    margin: 24px 0 8px;
+  }
+  .prose :global(p),
+  .prose :global(ul),
+  .prose :global(ol) {
+    margin: 0 0 18px;
+  }
+  .prose :global(li > ul),
+  .prose :global(li > ol) {
+    margin: 4px 0 4px;
+  }
+  .prose :global(img) {
+    max-width: 100%;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+  }
+  .prose :global(:not(pre) > code) {
+    font-family: var(--mono);
+    font-size: 0.88em;
+    padding: 2px 5px;
+    border-radius: 4px;
+    background: var(--accent-soft);
+  }
+  .prose :global(pre) {
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 16px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    overflow-x: auto;
+    margin: 0 0 20px;
+  }
+  .prose :global(pre code) {
+    font-family: var(--mono);
+  }
+  .prose :global(blockquote) {
+    margin: 0 0 18px;
+    padding-left: 16px;
+    border-left: 3px solid var(--border);
+    color: var(--muted);
+  }
+  .prose :global(blockquote > p) {
+    margin: 0 0 8px;
+  }
+  .prose :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 0 20px;
+    font-size: 15px;
+    display: block;
+    overflow-x: auto;
+  }
+  .prose :global(th),
+  .prose :global(td) {
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+  }
+  .prose :global(hr) {
+    border: 0;
+    border-top: 1px solid var(--border);
+    margin: 32px 0;
+  }
+  .prose :global(details) {
+    margin: 0 0 18px;
+  }
+  .prose :global(summary) {
+    cursor: pointer;
+    color: var(--muted);
+  }
+</style>
