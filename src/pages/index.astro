@@ -6,8 +6,6 @@ import Section from "../components/Section.astro";
 import ExperienceItem from "../components/ExperienceItem.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import Footer from "../components/Footer.astro";
-import LeetCodeHeatmap from "../components/LeetCodeHeatmap.astro";
-import leetcode from "../data/leetcode.json";
 import { experience, projects, skills, education } from "../data/site";
 ---
 
@@ -23,17 +21,6 @@ import { experience, projects, skills, education } from "../data/site";
     <Section id="projects" title="Projects">
       <div class="grid">
         {projects.map((p) => <ProjectCard project={p} />)}
-      </div>
-    </Section>
-
-    <Section id="leetcode" title="LeetCode">
-      <div class="lc">
-        <ul class="lc-stats">
-          <li><b>{leetcode.acceptedLastYear}</b><span>accepted, last year</span></li>
-          <li><b>{leetcode.activeDays}</b><span>active days</span></li>
-        </ul>
-        <LeetCodeHeatmap daily={leetcode.daily} end={leetcode.updated} weeks={26} cell={10} labels={false} />
-        <a href="/leetcode/">Solution notes and activity →</a>
       </div>
     </Section>
 
@@ -66,27 +53,6 @@ import { experience, projects, skills, education } from "../data/site";
 </Base>
 
 <style>
-  .lc {
-    display: grid;
-    gap: 16px;
-  }
-  .lc-stats {
-    display: flex;
-    gap: 32px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-  .lc-stats b {
-    display: block;
-    font-size: 26px;
-    line-height: 1.2;
-    font-variant-numeric: tabular-nums;
-  }
-  .lc-stats span {
-    color: var(--muted);
-    font-size: 14px;
-  }
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
