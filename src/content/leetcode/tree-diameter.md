@@ -3,6 +3,7 @@ title: "剥皮BFS - 1245. Tree Diameter"
 number: 1245
 topic: "BFS"
 problemUrl: "https://leetcode.com/problems/tree-diameter/"
+updated: "2026-05-01"
 difficulty: "Medium"
 ---
 

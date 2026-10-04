@@ -1,15 +1,8 @@
 {
- "updated": "2026-09-23",
- "acceptedLastYear": 1165,
- "activeDays": 187,
+ "updated": "2026-10-04",
+ "acceptedLastYear": 1166,
+ "activeDays": 188,
  "daily": {
-  "2025-09-17": 2,
-  "2025-09-19": 10,
-  "2025-09-21": 5,
-  "2025-09-22": 2,
-  "2025-09-23": 1,
-  "2025-09-24": 2,
-  "2025-09-27": 7,
   "2025-09-29": 4,
   "2025-09-30": 6,
   "2025-10-03": 8,
@@ -191,28 +184,37 @@
   "2026-09-18": 13,
   "2026-09-19": 5,
   "2026-09-22": 1,
-  "2026-09-23": 1
+  "2026-09-23": 1,
+  "2026-09-24": 2,
+  "2026-09-25": 4,
+  "2026-09-26": 5,
+  "2026-09-28": 2,
+  "2026-09-29": 5,
+  "2026-09-30": 3,
+  "2026-10-01": 4,
+  "2026-10-02": 10,
+  "2026-10-04": 1
  },
  "topics": [
   {
    "name": "Array",
-   "count": 493
+   "count": 506
   },
   {
    "name": "Hash Table",
-   "count": 192
+   "count": 196
   },
   {
    "name": "String",
-   "count": 189
+   "count": 195
   },
   {
    "name": "Dynamic Programming",
-   "count": 142
+   "count": 146
   },
   {
    "name": "Math",
-   "count": 124
+   "count": 126
   },
   {
    "name": "Sorting",
@@ -220,11 +222,11 @@
   },
   {
    "name": "Depth-First Search",
-   "count": 119
+   "count": 120
   },
   {
    "name": "Breadth-First Search",
-   "count": 95
+   "count": 98
   },
   {
    "name": "Two Pointers",
@@ -232,15 +234,15 @@
   },
   {
    "name": "Greedy",
-   "count": 87
+   "count": 88
   },
   {
    "name": "Tree",
-   "count": 78
+   "count": 79
   },
   {
-   "name": "Binary Search",
-   "count": 76
+   "name": "Matrix",
+   "count": 77
   }
  ]
 }

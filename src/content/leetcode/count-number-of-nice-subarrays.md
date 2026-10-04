@@ -3,6 +3,7 @@ title: "至多k-至多k-1/deque滑窗 - 1248. Count Number of Nice Subarrays"
 number: 1248
 topic: "Sliding Window"
 problemUrl: "https://leetcode.com/problems/count-number-of-nice-subarrays/"
+updated: "2026-07-08"
 difficulty: "Medium"
 ---
 

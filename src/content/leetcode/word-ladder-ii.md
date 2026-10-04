@@ -3,6 +3,7 @@ title: "BFS+反向DFS+字符预处理 - 126. Word Ladder II"
 number: 126
 topic: "BFS"
 problemUrl: "https://leetcode.com/problems/word-ladder-ii/"
+updated: "2026-04-04"
 difficulty: "Hard"
 ---
 

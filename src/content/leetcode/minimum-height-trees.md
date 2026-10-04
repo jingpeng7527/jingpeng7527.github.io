@@ -3,6 +3,7 @@ title: "拓扑/剥皮BFS - 310. Minimum Height Trees"
 number: 310
 topic: "BFS"
 problemUrl: "https://leetcode.com/problems/minimum-height-trees/"
+updated: "2026-05-01"
 difficulty: "Medium"
 ---
 

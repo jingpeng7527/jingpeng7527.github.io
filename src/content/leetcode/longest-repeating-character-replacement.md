@@ -3,6 +3,7 @@ title: "懒更新滑窗 - 424. Longest Repeating Character Replacement"
 number: 424
 topic: "Sliding Window"
 problemUrl: "https://leetcode.com/problems/longest-repeating-character-replacement/"
+updated: "2026-07-08"
 difficulty: "Medium"
 ---
 

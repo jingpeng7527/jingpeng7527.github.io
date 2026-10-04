@@ -3,6 +3,7 @@ title: "3414. Maximum Score of Non-overlapping Intervals"
 number: 3414
 topic: "DP"
 problemUrl: "https://leetcode.com/problems/maximum-score-of-non-overlapping-intervals/"
+updated: "2026-09-13"
 difficulty: "Hard"
 ---
 

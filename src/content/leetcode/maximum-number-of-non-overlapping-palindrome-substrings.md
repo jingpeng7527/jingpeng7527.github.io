@@ -3,6 +3,7 @@ title: "2472. Maximum Number of Non-overlapping Palindrome Substrings"
 number: 2472
 topic: "Greedy"
 problemUrl: "https://leetcode.com/problems/maximum-number-of-non-overlapping-palindrome-substrings/"
+updated: "2026-09-15"
 difficulty: "Hard"
 ---
 

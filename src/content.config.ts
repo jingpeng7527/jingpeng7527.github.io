@@ -25,6 +25,8 @@ const leetcode = defineCollection({
     topic: z.string(),
     difficulty: z.enum(["Easy", "Medium", "Hard"]).optional(),
     problemUrl: z.string().url(),
+    // last edited in Notion; drives the "Recently updated" list
+    updated: z.coerce.date().optional(),
   }),
 });
 

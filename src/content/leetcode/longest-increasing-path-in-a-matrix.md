@@ -3,6 +3,7 @@ title: "必须DFS的DP - 329. Longest Increasing Path in a Matrix"
 number: 329
 topic: "DP"
 problemUrl: "https://leetcode.com/problems/longest-increasing-path-in-a-matrix/"
+updated: "2026-04-29"
 difficulty: "Hard"
 ---
 

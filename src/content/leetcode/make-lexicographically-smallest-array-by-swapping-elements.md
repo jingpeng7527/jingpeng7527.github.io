@@ -3,6 +3,7 @@ title: "2948. Make Lexicographically Smallest Array by Swapping Elements"
 number: 2948
 topic: "Array"
 problemUrl: "https://leetcode.com/problems/make-lexicographically-smallest-array-by-swapping-elements/"
+updated: "2026-09-02"
 difficulty: "Medium"
 ---
 

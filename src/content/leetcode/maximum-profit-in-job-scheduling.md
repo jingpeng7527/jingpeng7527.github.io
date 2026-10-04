@@ -3,6 +3,7 @@ title: "interval: dp + binary / heap 1235. Maximum Profit in Job Scheduling"
 number: 1235
 topic: "Interval"
 problemUrl: "https://leetcode.com/problems/maximum-profit-in-job-scheduling/"
+updated: "2026-09-13"
 difficulty: "Hard"
 ---
 

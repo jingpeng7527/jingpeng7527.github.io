@@ -3,6 +3,7 @@ title: "非定长 求最大 可不连续缩窗的滑窗-3. Longest Substring Wit
 number: 3
 topic: "Sliding Window"
 problemUrl: "https://leetcode.com/problems/longest-substring-without-repeating-characters/"
+updated: "2026-07-08"
 difficulty: "Medium"
 ---
 

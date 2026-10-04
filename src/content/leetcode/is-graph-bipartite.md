@@ -3,6 +3,7 @@ title: "二分图 - 785. Is Graph Bipartite?"
 number: 785
 topic: "Graph"
 problemUrl: "https://leetcode.com/problems/is-graph-bipartite/"
+updated: "2026-04-04"
 difficulty: "Medium"
 ---
 

@@ -3,6 +3,7 @@ title: "DP - 115. Distinct Subsequences"
 number: 115
 topic: "DP"
 problemUrl: "https://leetcode.com/problems/distinct-subsequences/"
+updated: "2026-04-08"
 difficulty: "Hard"
 ---
 

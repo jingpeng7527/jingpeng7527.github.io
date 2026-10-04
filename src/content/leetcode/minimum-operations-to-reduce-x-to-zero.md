@@ -3,6 +3,7 @@ title: "变通滑窗 - 1658. Minimum Operations to Reduce X to Zero"
 number: 1658
 topic: "Sliding Window"
 problemUrl: "https://leetcode.com/problems/minimum-operations-to-reduce-x-to-zero/"
+updated: "2026-09-23"
 difficulty: "Medium"
 ---
 

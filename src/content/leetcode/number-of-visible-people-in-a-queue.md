@@ -3,6 +3,7 @@ title: "单调栈 - 1944. Number of Visible People in a Queue"
 number: 1944
 topic: "Stack"
 problemUrl: "https://leetcode.com/problems/number-of-visible-people-in-a-queue/"
+updated: "2026-04-20"
 difficulty: "Hard"
 ---
 

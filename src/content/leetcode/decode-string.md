@@ -3,6 +3,7 @@ title: "394. Decode String"
 number: 394
 topic: "Stack"
 problemUrl: "https://leetcode.com/problems/decode-string/"
+updated: "2026-04-04"
 difficulty: "Medium"
 ---
 

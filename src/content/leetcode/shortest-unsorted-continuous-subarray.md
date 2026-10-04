@@ -3,6 +3,7 @@ title: "双向单调栈 - 581. Shortest Unsorted Continuous Subarray"
 number: 581
 topic: "Stack"
 problemUrl: "https://leetcode.com/problems/shortest-unsorted-continuous-subarray/"
+updated: "2026-04-23"
 difficulty: "Medium"
 ---
 

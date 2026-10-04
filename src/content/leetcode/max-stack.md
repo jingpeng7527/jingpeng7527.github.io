@@ -3,6 +3,7 @@ title: "716. Max Stack"
 number: 716
 topic: "Heap"
 problemUrl: "https://leetcode.com/problems/max-stack/"
+updated: "2026-05-01"
 difficulty: "Hard"
 ---
 

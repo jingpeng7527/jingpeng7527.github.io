@@ -3,6 +3,7 @@ title: "并查集 - 323. Number of Connected Components in an Undirected Graph"
 number: 323
 topic: "Graph"
 problemUrl: "https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/"
+updated: "2026-06-08"
 difficulty: "Medium"
 ---
 

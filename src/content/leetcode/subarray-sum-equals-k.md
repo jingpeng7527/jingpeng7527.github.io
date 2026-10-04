@@ -3,6 +3,7 @@ title: "preSum - 560. Subarray Sum Equals K"
 number: 560
 topic: "PreSum"
 problemUrl: "https://leetcode.com/problems/subarray-sum-equals-k/"
+updated: "2026-07-01"
 difficulty: "Medium"
 ---
 

@@ -3,6 +3,7 @@ title: "拓扑排序 - 210. Course Schedule II"
 number: 210
 topic: "Graph"
 problemUrl: "https://leetcode.com/problems/course-schedule-ii/"
+updated: "2026-04-04"
 difficulty: "Medium"
 ---
 

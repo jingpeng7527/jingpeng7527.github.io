@@ -3,6 +3,7 @@ title: "DP - 276. Paint Fence"
 number: 276
 topic: "DP"
 problemUrl: "https://leetcode.com/problems/paint-fence/"
+updated: "2026-04-14"
 difficulty: "Medium"
 ---
 

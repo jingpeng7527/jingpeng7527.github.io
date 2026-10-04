@@ -1,20 +1,150 @@
 ---
-import { profile } from "../data/site";
+import { profile, links } from "../data/site";
 const year = new Date().getFullYear();
+
+// MapMyVisitors flat map. co = ocean, cl = land, ct = text; w = width in px (widget caps at 300); t=n hides its own counter.
+const mapSrc =
+  "https://mapmyvisitors.com/map.js?d=u6H2bsa9FsmwmxAzgGch9plLKSwXbOnOXGm9U4xu9ng&w=280&t=n&co=12302d&cl=3d7a73&ct=ffffff";
 ---
 
 <footer class="container">
-  <p>© {year} {profile.name} · Built with <a href="https://astro.build" target="_blank" rel="noopener">Astro</a></p>
+  <div class="contact">
+    <h2>Let's connect</h2>
+    <p class="pitch">Always happy to chat about backend systems, interesting problems, or opportunities.</p>
+    <ul class="links">
+      {links.map((l) => (
+        <li>
+          <a href={l.href} target={l.href.startsWith("http") ? "_blank" : undefined} rel="noopener">
+            {l.label}{l.href.startsWith("http") && " ↗"}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <p class="credits">
+    © {year} {profile.name} · Built with <a href="https://astro.build" target="_blank" rel="noopener">Astro</a>
+    <span id="views" hidden> · <strong id="views-count"></strong> page views</span>
+  </p>
+
+  {/* production only so dev visits don't show up on the map */}
+  {import.meta.env.PROD && (
+    <figure class="map">
+      <div class="map-frame" aria-label="Visitor map">
+        <script is:inline type="text/javascript" id="mapmyvisitors" src={mapSrc}></script>
+      </div>
+      <figcaption>Visitors from around the world</figcaption>
+    </figure>
+  )}
 </footer>
+
+<script is:inline>
+  // Site-wide total from GoatCounter's public counter; stays hidden if unavailable.
+  fetch("https://jingpeng.goatcounter.com/counter/TOTAL.json")
+    .then((r) => (r.ok ? r.json() : Promise.reject()))
+    .then((d) => {
+      if (d.count === "0") return;
+      document.getElementById("views-count").textContent = d.count;
+      document.getElementById("views").hidden = false;
+    })
+    .catch(() => {});
+</script>
 
 <style>
   footer {
-    padding: 32px 16px 48px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "contact map"
+      "credits map";
+    column-gap: 32px;
+    row-gap: 24px;
+    padding: 40px 16px 48px;
     border-top: 1px solid var(--border);
     font-size: 13px;
     color: var(--muted);
   }
   p {
     margin: 0;
+  }
+
+  .contact {
+    grid-area: contact;
+  }
+  .credits {
+    grid-area: credits;
+    align-self: end;
+  }
+  h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .pitch {
+    margin-top: 6px;
+    font-size: 15px;
+    max-width: 38ch;
+  }
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 16px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .links a {
+    display: inline-block;
+    padding: 5px 12px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .links a:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .credits strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .map {
+    grid-area: map;
+    margin: 0;
+    width: 280px;
+  }
+  .map-frame {
+    border-radius: 10px;
+    overflow: hidden;
+    line-height: 0;
+  }
+  figcaption {
+    margin-top: 8px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    text-align: right;
+  }
+
+  @media (max-width: 640px) {
+    footer {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "contact"
+        "map"
+        "credits";
+    }
+    .map {
+      width: 100%;
+      max-width: 280px;
+    }
+    figcaption {
+      text-align: left;
+    }
   }
 </style>

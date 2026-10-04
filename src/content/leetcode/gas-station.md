@@ -3,6 +3,7 @@ title: "134. Gas Station"
 number: 134
 topic: "Greedy"
 problemUrl: "https://leetcode.com/problems/gas-station/"
+updated: "2026-04-12"
 difficulty: "Medium"
 ---
 

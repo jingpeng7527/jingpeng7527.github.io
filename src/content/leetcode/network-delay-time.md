@@ -3,6 +3,7 @@ title: "Dijkstra - 743. Network Delay Time"
 number: 743
 topic: "Graph"
 problemUrl: "https://leetcode.com/problems/network-delay-time/"
+updated: "2026-03-12"
 difficulty: "Medium"
 ---
 

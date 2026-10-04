@@ -3,6 +3,7 @@ title: "300. Longest Increasing Subsequence"
 number: 300
 topic: "Binary Search"
 problemUrl: "https://leetcode.com/problems/longest-increasing-subsequence/"
+updated: "2026-04-19"
 difficulty: "Medium"
 ---
 

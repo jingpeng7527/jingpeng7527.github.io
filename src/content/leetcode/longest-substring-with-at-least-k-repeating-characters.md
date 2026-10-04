@@ -3,6 +3,7 @@ title: "分治 - 395. Longest Substring with At Least K Repeating Characters"
 number: 395
 topic: "Divide and Conquer"
 problemUrl: "https://leetcode.com/problems/longest-substring-with-at-least-k-repeating-characters/"
+updated: "2026-06-21"
 difficulty: "Medium"
 ---
 

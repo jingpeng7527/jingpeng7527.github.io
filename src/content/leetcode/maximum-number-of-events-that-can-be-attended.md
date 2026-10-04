@@ -3,6 +3,7 @@ title: "最小堆 贪心-1353. Maximum Number of Events That Can Be Attended"
 number: 1353
 topic: "Interval"
 problemUrl: "https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended/"
+updated: "2026-04-13"
 difficulty: "Medium"
 ---
 

@@ -3,6 +3,7 @@ title: "142. Linked List Cycle II"
 number: 142
 topic: "Linked List"
 problemUrl: "https://leetcode.com/problems/linked-list-cycle-ii/"
+updated: "2026-04-04"
 difficulty: "Medium"
 ---
 

@@ -3,6 +3,7 @@ title: "limited BFS - 1036. Escape a Large Maze"
 number: 1036
 topic: "BFS"
 problemUrl: "https://leetcode.com/problems/escape-a-large-maze/"
+updated: "2026-06-08"
 difficulty: "Hard"
 ---
 

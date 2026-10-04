@@ -3,6 +3,7 @@ title: "反向DFS/并查集 - 803. Bricks Falling When Hit"
 number: 803
 topic: "Graph"
 problemUrl: "https://leetcode.com/problems/bricks-falling-when-hit/"
+updated: "2026-04-27"
 difficulty: "Hard"
 ---
 

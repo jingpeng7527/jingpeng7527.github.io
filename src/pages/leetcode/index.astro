@@ -13,6 +13,12 @@ for (const n of notes) byTopic.set(n.data.topic, [...(byTopic.get(n.data.topic) 
 const topics = [...byTopic.entries()].sort(([a], [b]) => a.localeCompare(b));
 for (const [, list] of topics) list.sort((a, b) => a.data.number - b.data.number);
 const maxTopic = Math.max(...stats.topics.map((t) => t.count), 1);
+
+const recent = notes
+  .filter((n) => n.data.updated)
+  .sort((a, b) => b.data.updated!.valueOf() - a.data.updated!.valueOf() || b.data.number - a.data.number)
+  .slice(0, 5);
+const fmtDate = (d: Date) => d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" });
 ---
 
 <Base title={`LeetCode · ${profile.name}`} description={`LeetCode activity and solution notes by ${profile.name}.`}>
@@ -41,7 +47,26 @@ const maxTopic = Math.max(...stats.topics.map((t) => t.count), 1);
       ))}
     </div>
 
-    <h2>Notes</h2>
+    {recent.length > 0 && (
+      <>
+        <h2>Recently updated</h2>
+        <ul class="list recent">
+          {recent.map((n) => (
+            <li>
+              <a href={`/leetcode/${n.id}/`}>
+                <span class="t">{n.data.title}</span>
+                <span class="meta">
+                  <span class="topic">{n.data.topic}</span>
+                  <time datetime={n.data.updated!.toISOString()}>{fmtDate(n.data.updated!)}</time>
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </>
+    )}
+
+    <h2>Notes by topic</h2>
     {topics.map(([topic, list]) => (
       <section>
         <h3>{topic} <span>{list.length}</span></h3>
@@ -157,6 +182,24 @@ const maxTopic = Math.max(...stats.topics.map((t) => t.count), 1);
   }
   .list a:hover .t {
     color: var(--accent);
+  }
+  .recent .meta {
+    display: flex;
+    flex-shrink: 0;
+    gap: 12px;
+    align-items: baseline;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .recent .topic {
+    color: var(--accent);
+  }
+  @media (max-width: 600px) {
+    .recent a {
+      flex-direction: column;
+      gap: 2px;
+    }
   }
   .diff {
     flex-shrink: 0;

@@ -3,6 +3,7 @@ title: "0-1BFS - 2290. Minimum Obstacle Removal to Reach Corner"
 number: 2290
 topic: "BFS"
 problemUrl: "https://leetcode.com/problems/minimum-obstacle-removal-to-reach-corner/"
+updated: "2026-06-08"
 difficulty: "Hard"
 ---
 

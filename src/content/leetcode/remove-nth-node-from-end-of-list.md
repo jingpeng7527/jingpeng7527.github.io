@@ -3,6 +3,7 @@ title: "19. Remove Nth Node From End of List"
 number: 19
 topic: "Linked List"
 problemUrl: "https://leetcode.com/problems/remove-nth-node-from-end-of-list/"
+updated: "2026-04-04"
 difficulty: "Medium"
 ---
 

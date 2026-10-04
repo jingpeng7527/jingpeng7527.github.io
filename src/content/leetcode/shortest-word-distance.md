@@ -3,6 +3,7 @@ title: "一次遍历+双指针 - 243. Shortest Word Distance"
 number: 243
 topic: "Two Pointers"
 problemUrl: "https://leetcode.com/problems/shortest-word-distance/"
+updated: "2026-05-19"
 difficulty: "Easy"
 ---
 

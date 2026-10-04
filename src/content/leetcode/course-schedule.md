@@ -3,6 +3,7 @@ title: "环检测 - 207. Course Schedule"
 number: 207
 topic: "Graph"
 problemUrl: "https://leetcode.com/problems/course-schedule/"
+updated: "2026-04-04"
 difficulty: "Medium"
 ---
 

@@ -3,6 +3,7 @@ title: "拓扑DP - 1857. Largest Color Value in a Directed Graph"
 number: 1857
 topic: "Graph"
 problemUrl: "https://leetcode.com/problems/largest-color-value-in-a-directed-graph/"
+updated: "2026-05-01"
 difficulty: "Hard"
 ---
 

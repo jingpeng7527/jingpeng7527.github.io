@@ -3,6 +3,7 @@ title: "3635. Earliest Finish Time for Land and Water Rides II"
 number: 3635
 topic: "Greedy"
 problemUrl: "https://leetcode.com/problems/earliest-finish-time-for-land-and-water-rides-ii/"
+updated: "2026-06-08"
 difficulty: "Medium"
 ---
 

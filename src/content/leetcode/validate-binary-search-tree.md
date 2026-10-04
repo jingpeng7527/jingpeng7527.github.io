@@ -3,6 +3,7 @@ title: "98. Validate Binary Search Tree"
 number: 98
 topic: "Tree"
 problemUrl: "https://leetcode.com/problems/validate-binary-search-tree/"
+updated: "2026-03-16"
 difficulty: "Medium"
 ---
 

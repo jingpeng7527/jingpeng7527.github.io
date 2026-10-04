@@ -3,6 +3,7 @@ title: "双指针 - 244. Shortest Word Distance II"
 number: 244
 topic: "Two Pointers"
 problemUrl: "https://leetcode.com/problems/shortest-word-distance-ii/"
+updated: "2026-05-19"
 difficulty: "Medium"
 ---
 

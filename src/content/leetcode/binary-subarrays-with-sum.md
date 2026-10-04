@@ -3,6 +3,7 @@ title: "preSum/滑窗 - 930. Binary Subarrays With Sum"
 number: 930
 topic: "PreSum"
 problemUrl: "https://leetcode.com/problems/binary-subarrays-with-sum/"
+updated: "2026-07-01"
 difficulty: "Medium"
 ---
 

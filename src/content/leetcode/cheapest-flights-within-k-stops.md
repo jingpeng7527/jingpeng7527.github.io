@@ -3,6 +3,7 @@ title: "限制级Dijkstra - 787. Cheapest Flights Within K Stops"
 number: 787
 topic: "Graph"
 problemUrl: "https://leetcode.com/problems/cheapest-flights-within-k-stops/"
+updated: "2026-04-21"
 difficulty: "Medium"
 ---
 

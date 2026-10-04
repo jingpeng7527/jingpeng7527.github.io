@@ -3,6 +3,7 @@ title: "76. Minimum Window Substring"
 number: 76
 topic: "Sliding Window"
 problemUrl: "https://leetcode.com/problems/minimum-window-substring/"
+updated: "2026-04-04"
 difficulty: "Hard"
 ---
 

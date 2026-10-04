@@ -3,6 +3,7 @@ title: "BFS/双向BFS - 127. Word Ladder"
 number: 127
 topic: "BFS"
 problemUrl: "https://leetcode.com/problems/word-ladder/"
+updated: "2026-04-04"
 difficulty: "Hard"
 ---
 
